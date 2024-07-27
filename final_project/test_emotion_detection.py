@@ -3,24 +3,29 @@ from EmotionDetection.emotion_detection import emotion_detector
 
 class TestEmotionDetection(unittest.TestCase):
 
-    def test_glad_statement(self):
-        result = emotion_detector("I am glad this happened.")
+    def test_joy(self):
+        text = "I am glad this happened"
+        result = emotion_detector(text)
         self.assertEqual(result['dominant_emotion'], 'joy')
 
-    def test_mad_statement(self):
-        result = emotion_detector("I am really mad about this.")
+    def test_anger(self):
+        text = "I am really mad about this"
+        result = emotion_detector(text)
         self.assertEqual(result['dominant_emotion'], 'anger')
 
-    def test_disgusted_statement(self):
-        result = emotion_detector("I feel disgusted just hearing about this.")
+    def test_disgust(self):
+        text = "I feel disgusted just hearing about this"
+        result = emotion_detector(text)
         self.assertEqual(result['dominant_emotion'], 'disgust')
 
-    def test_sad_statement(self):
-        result = emotion_detector("I am so sad about this.")
+    def test_sadness(self):
+        text = "I am so sad about this"
+        result = emotion_detector(text)
         self.assertEqual(result['dominant_emotion'], 'sadness')
 
-    def test_afraid_statement(self):
-        result = emotion_detector("I am really afraid that this will happen.")
+    def test_fear(self):
+        text = "I am really afraid that this will happen"
+        result = emotion_detector(text)
         self.assertEqual(result['dominant_emotion'], 'fear')
 
 if __name__ == '__main__':
